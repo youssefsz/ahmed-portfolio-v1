@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#5C6BC0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CTF Compass - Your Guide to Capture The Flag Events</title>
+    
+    <!-- Prevent flash of unstyled content in dark mode -->
+    <script>
+        // Check for saved theme preference or system preference
+        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const savedTheme = localStorage.getItem('theme');
+        
+        // Apply dark mode immediately if needed
+        if (savedTheme === 'dark' || (!savedTheme && darkModeMediaQuery.matches)) {
+            document.documentElement.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
+            
+            // Add inline style for main-content to ensure immediate styling
+            document.addEventListener('DOMContentLoaded', function() {
+                const mainContent = document.getElementById('main-content');
+                if (mainContent) {
+                    mainContent.style.backgroundColor = 'transparent';
+                    mainContent.style.color = '#f8fafc';
+                }
+            });
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="CTF Compass - The ultimate companion app for cybersecurity enthusiasts. Track, participate, and excel in Capture The Flag competitions worldwide.">
+</head>
+<body>
+    <div class="dynamic-bg"></div>
+    <div id="particles-container"></div>
+    
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="CTF Compass Logo">
+                <span>CTF Compass</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" aria-label="Features section">Features</a>
+                <a href="#how-it-works" aria-label="How it works section">How It Works</a>
+                <a href="#pricing" aria-label="Pricing section">Pricing</a>
+                <a href="#download" class="btn-primary" aria-label="Download now">Download Now</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>
+                        Connect with
+                        <span class="highlight">CTF Compass</span>
+                        <span class="secondary-highlight">Next-Gen Security</span>
+                    </h1>
+                    <p>Experience a new era of cybersecurity with CTF Compass. Smart tracking, AI insights, competitive events, and more - all in one beautiful, intuitive app.</p>
+                    <div class="cta-buttons">
+                        <a href="#download" class="btn-primary">Download Now</a>
+                        <a href="#features" class="btn-outline">See Features</a>
+                    </div>
+                </div>
+                <div class="hero-device-mockups">
+                    <div class="mockup-container">
+                        <div class="mockup-secondary device-mockup floating-device" data-float-delay="0">
+                            <img src="images/s3.png" alt="CTF Compass Event Dashboard" loading="eager" class="smaller-mockup">
+                        </div>
+                        <div class="mockup-main device-mockup floating-device" data-float-delay="0.2">
+                            <img src="images/s1.png" alt="CTF Compass Main Interface" loading="eager" class="smaller-mockup">
+                        </div>
+                        <div class="mockup-tertiary device-mockup floating-device" data-float-delay="0.4">
+                            <img src="images/s2.png" alt="CTF Compass Challenge View" loading="eager" class="smaller-mockup">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Powerful Features for Cybersecurity Enthusiasts</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3>Event Tracking</h3>
+                        <p>Never miss a CTF event with our comprehensive calendar and notifications system.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy" aria-hidden="true"></i>
+                        </div>
+                        <h3>Competition History</h3>
+                        <p>Track your performance across different events and monitor your progress over time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h3>Team Management</h3>
+                        <p>Create and manage teams, coordinate with teammates, and share resources efficiently.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                        </div>
+                        <h3>Tool Integration</h3>
+                        <p>Access common cybersecurity tools and resources directly within the app.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                        </div>
+                        <h3>Learning Resources</h3>
+                        <p>Improve your skills with our curated collection of tutorials and guides.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell" aria-hidden="true"></i>
+                        </div>
+                        <h3>Smart Notifications</h3>
+                        <p>Get personalized alerts for events that match your interests and skill level.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How CTF Compass Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Download</h3>
+                        <p>Get started in minutes with our simple registration process.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Customize Your Profile</h3>
+                        <p>Set your skill level, interests, and notification preferences.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Discover Events</h3>
+                        <p>Browse upcoming CTF competitions filtered to match your preferences.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Compete & Track</h3>
+                        <p>Participate in events and track your progress in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="app-showcase">
+            <div class="container">
+                <div class="showcase-content">
+                    <h2>Designed for the Modern Cybersecurity Professional</h2>
+                    <p>CTF Compass features an intuitive, user-friendly interface that helps you focus on what matters most - solving challenges and improving your skills.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Dark mode support</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Offline access to saved events</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Cross-platform synchronization</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Regular updates with new features</li>
+                    </ul>
+                </div>
+                <div class="showcase-image">
+                    <img src="images/s2.png" alt="CTF Compass App Interface Screenshots" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Choose Your Plan</h2>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Free</h3>
+                            <div class="price">$0</div>
+                            <p>Perfect for beginners</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Basic event tracking</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Personal performance stats</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Limited notifications</li>
+                            <li><i class="fas fa-times" aria-hidden="true"></i> Ad-supported experience</li>
+                            <li><i class="fas fa-times" aria-hidden="true"></i> Team management</li>
+                            <li><i class="fas fa-times" aria-hidden="true"></i> Advanced analytics</li>
+                        </ul>
+                        <a href="#download" class="btn-secondary">Download Free</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3>Premium</h3>
+                            <div class="price">$0.99</div>
+                            <p>One-time payment</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Comprehensive event tracking</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Detailed performance analytics</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited notifications</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Ad-free experience</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Team management</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Priority support</li>
+                        </ul>
+                        <a href="#download" class="btn-secondary">Upgrade Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <div class="container">
+                <h2>Download CTF Compass Today</h2>
+                <p>Available on multiple platforms to support your cybersecurity journey</p>
+                <div class="download-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.abidiahmed.ctfcompass" class="download-btn" aria-label="Get it on Google Play">
+                        <i class="fab fa-google-play" aria-hidden="true"></i>
+                        <div>
+                            <span>GET IT ON</span>
+                            <span class="store-name">Google Play</span>
+                        </div>
+                    </a>
+                    <a href="#" class="download-btn" aria-label="Download on Aptoide Store">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        <div>
+                            <span>Download on</span>
+                            <span class="store-name">Aptoide Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="CTF Compass Logo">
+                    <span>CTF Compass</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="cookies.html">Cookie Policy</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2025</span> CTF Compass. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Particles animation with mobile optimization
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles-container');
+            // Reduce particle count on mobile
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 15 : 30;
+            
+            // Create particles
+            for (let i = 0; i < particleCount; i++) {
+                createParticle();
+            }
+            
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 5px and 25px (smaller on mobile)
+                const maxSize = isMobile ? 15 : 25;
+                const size = Math.random() * maxSize + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.3 + 0.05;
+                
+                // Random animation duration
+                const duration = Math.random() * 60 + 30;
+                particle.style.animation = `float ${duration}s ease-in-out infinite`;
+                
+                // Add to container
+                particlesContainer.appendChild(particle);
+                
+                // Random movement
+                const keyframes = `
+                    @keyframes float${i} {
+                        0% { transform: translate(0, 0) rotate(0deg); }
+                        33% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
+                        66% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
+                        100% { transform: translate(0, 0) rotate(0deg); }
+                    }
+                `;
+                
+                const style = document.createElement('style');
+                style.innerHTML = keyframes;
+                document.head.appendChild(style);
+                
+                particle.style.animation = `float${i} ${duration}s ease-in-out infinite`;
+            }
+            
+            // Handle resize events
+            window.addEventListener('resize', function() {
+                const newIsMobile = window.innerWidth < 768;
+                // Only rebuild particles if mobile state changed
+                if (newIsMobile !== isMobile) {
+                    // Clear existing particles
+                    particlesContainer.innerHTML = '';
+                    // Rebuild with new count
+                    const newParticleCount = newIsMobile ? 15 : 30;
+                    for (let i = 0; i < newParticleCount; i++) {
+                        createParticle();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

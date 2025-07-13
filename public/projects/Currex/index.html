@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrEx - Currency Exchange Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="light-mode">
+    <div class="theme-animation-overlay"></div>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">CurrEx</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; position: relative;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content">
+                <h1>Currency Exchange Made Simple</h1>
+                <p>Convert, track, and manage currencies with real-time rates and beautiful visualizations.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="app-store-badge">
+                        <img src="images/badges/app-store-badge.svg" alt="Download on the App Store">
+                    </a>
+                    <a href="#" class="google-play-badge">
+                        <img src="images/badges/google-play-badge.png" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-frame light-mode-visible">
+                    <img src="images/screenshot-light-convert.jpg" alt="CurrEx app in light mode">
+                </div>
+                <div class="phone-frame dark-mode-visible">
+                    <img src="images/screenshot-dark-convert.jpg" alt="CurrEx app in dark mode">
+                </div>
+            </div>
+        </div>
+        <!-- Add an overlay to ensure text readability -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="convert">Convert</button>
+                    <button class="tab-btn" data-tab="charts">Charts</button>
+                    <button class="tab-btn" data-tab="currencies">Currencies</button>
+                    <button class="tab-btn" data-tab="settings">Settings</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="convert-tab">
+                        <div class="feature-content">
+                            <h3>Real-time Currency Conversion</h3>
+                            <p>Convert between currencies with accurate, up-to-date exchange rates. CurrEx provides instant calculations with support for over 170 currencies worldwide.</p>
+                            <ul>
+                                <li>Live exchange rates updated every minute</li>
+                                <li>Quick swap functionality</li>
+                                <li>Historical rate comparisons</li>
+                                <li>Favorite currency pairs for quick access</li>
+                            </ul>
+                        </div>
+                        <div class="feature-image">
+                            <div class="phone-frame light-mode-visible">
+                                <img src="images/screenshot-light-convert.jpg" alt="Convert screen in light mode">
+                            </div>
+                            <div class="phone-frame dark-mode-visible">
+                                <img src="images/screenshot-dark-convert.jpg" alt="Convert screen in dark mode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="charts-tab">
+                        <div class="feature-content">
+                            <h3>Interactive Currency Charts</h3>
+                            <p>Track currency performance with interactive charts. View historical data and analyze trends to make informed decisions.</p>
+                            <ul>
+                                <li>Interactive time-period selections (day, week, month, year)</li>
+                                <li>Zoom and pan functionality</li>
+                                <li>Compare multiple currencies</li>
+                                <li>Export chart data for analysis</li>
+                            </ul>
+                        </div>
+                        <div class="feature-image">
+                            <div class="phone-frame light-mode-visible">
+                                <img src="images/screenshot-light-charts.jpg" alt="Charts screen in light mode">
+                            </div>
+                            <div class="phone-frame dark-mode-visible">
+                                <img src="images/screenshot-dark-charts.jpg" alt="Charts screen in dark mode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="currencies-tab">
+                        <div class="feature-content">
+                            <h3>Comprehensive Currency Management</h3>
+                            <p>Access detailed information about every supported currency. Organize, filter, and customize your currency list.</p>
+                            <ul>
+                                <li>Complete currency details and information</li>
+                                <li>Customizable favorites list</li>
+                                <li>Smart search and filtering</li>
+                                <li>Regional currency grouping</li>
+                            </ul>
+                        </div>
+                        <div class="feature-image">
+                            <div class="phone-frame light-mode-visible">
+                                <img src="images/screenshot-light-currencies.jpg" alt="Currencies screen in light mode">
+                            </div>
+                            <div class="phone-frame dark-mode-visible">
+                                <img src="images/screenshot-dark-currencies.jpg" alt="Currencies screen in dark mode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="settings-tab">
+                        <div class="feature-content">
+                            <h3>Personalization Options</h3>
+                            <p>Customize your experience with a range of settings. Choose between light and dark themes, set preferred currencies, and configure notifications.</p>
+                            <ul>
+                                <li>Light/dark mode with system sync</li>
+                                <li>Default currency preferences</li>
+                                <li>Rate alert notifications</li>
+                                <li>Data usage settings</li>
+                            </ul>
+                        </div>
+                        <div class="feature-image">
+                            <div class="phone-frame light-mode-visible">
+                                <img src="images/screenshot-light-settings.jpg" alt="Settings screen in light mode">
+                            </div>
+                            <div class="phone-frame dark-mode-visible">
+                                <img src="images/screenshot-dark-settings.jpg" alt="Settings screen in dark mode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2>Why Choose CurrEx?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Perform currency conversions instantly with our optimized engine. No waiting, no delays.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>170+ Currencies</h3>
+                    <p>Support for over 170 global currencies, including crypto and precious metals.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Beautiful UI</h3>
+                    <p>Enjoy a clean, intuitive interface with light and dark themes that are easy on the eyes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Offline Capable</h3>
+                    <p>Use the app even without an internet connection with cached exchange rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">How accurate are the exchange rates?</div>
+                    <div class="faq-answer">
+                        <p>CurrEx retrieves exchange rates from multiple reliable financial data providers and updates them every minute to ensure the highest accuracy possible.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is there a fee for using CurrEx?</div>
+                    <div class="faq-answer">
+                        <p>CurrEx offers both free and premium versions. The free version includes all essential conversion features with ads, while the premium version offers additional features like chart exports and removes advertisements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does CurrEx work offline?</div>
+                    <div class="faq-answer">
+                        <p>Yes! CurrEx caches the most recent exchange rates when you're online, allowing you to perform conversions even without an internet connection.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Which currencies are supported?</div>
+                    <div class="faq-answer">
+                        <p>CurrEx supports over 170 currencies, including all major global currencies, popular cryptocurrencies, and precious metals like gold and silver.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Simplify Currency Exchange?</h2>
+            <p>Download CurrEx today and experience the easiest way to convert and track currencies.</p>
+            <div class="cta-buttons">
+                <a href="#" class="app-store-badge">
+                    <img src="images/badges/app-store-badge.svg" alt="Download on the App Store">
+                </a>
+                <a href="#" class="google-play-badge">
+                    <img src="images/badges/google-play-badge.png" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">CurrEx</div>
+                    <p>Currency Exchange Made Simple</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>App</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#benefits">Benefits</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CurrEx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
