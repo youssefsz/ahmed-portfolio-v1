@@ -2,21 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Performance optimizations for Core Web Vitals */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+    scroll-restoration: manual;
+    /* Optimize rendering performance */
+    font-display: swap;
+    text-rendering: optimizeSpeed;
+  }
 
-body {
-  font-family: "Inter", sans-serif;
-  background: #020617;
-  color: white;
-  overflow-x: hidden;
+  body {
+    font-family: "Inter", sans-serif;
+    background: #020617;
+    color: white;
+    overflow-x: hidden;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Reduce layout shifts */
+    line-height: 1.5;
+  }
+
+  /* Preload critical fonts */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Inter');
+  }
 }
 
 /* Custom scrollbar */
@@ -37,7 +59,52 @@ body {
   background: #475569;
 }
 
-/* Smooth animations */
+/* Performance-optimized animations */
+@layer utilities {
+  /* Prefer reduced motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* GPU-accelerated transitions */
+  .transition-optimized {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Custom animations for better performance */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) translateZ(0); }
+    50% { transform: translateY(-10px) translateZ(0); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* SEO-friendly focus styles */
+  .focus-visible:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Prevent layout shift for images */
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  }
+}
+
+/* Apply optimized transitions to all elements */
 * {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  @apply transition-optimized;
 }

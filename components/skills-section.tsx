@@ -198,9 +198,15 @@ const SkillsSection = () => {
   }
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
+    <section 
+      id="skills" 
+      className="py-20 relative overflow-hidden"
+      itemScope
+      itemType="https://schema.org/ItemList"
+      aria-label="Technical Skills and Expertise"
+    >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-pink-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-pink-900/10" aria-hidden="true" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -211,10 +217,16 @@ const SkillsSection = () => {
           className="text-center mb-16"
         >
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-blue-300 to-purple-400 bg-clip-text text-transparent">
+          <h2 
+            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-blue-300 to-purple-400 bg-clip-text text-transparent"
+            itemProp="name"
+          >
             Skills & Expertise
           </h2>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p 
+            className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed"
+            itemProp="description"
+          >
             Passionate about creating digital experiences with modern technologies. 
             Here's my technical toolkit and proficiency levels.
           </p>
@@ -333,7 +345,7 @@ const SkillsSection = () => {
             <div className="hidden sm:block w-px h-12 bg-gray-700/50" />
             <div className="block sm:hidden w-12 h-px bg-gray-700/50" />
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-purple-400">50+</div>
+              <div className="text-xl sm:text-2xl font-bold text-purple-400">15+</div>
               <div className="text-xs sm:text-sm text-gray-400">Projects Completed</div>
             </div>
           </div>

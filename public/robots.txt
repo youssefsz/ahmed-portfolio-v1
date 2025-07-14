@@ -1,0 +1,56 @@
+# Ahmed Abidi - Developer Portfolio
+# https://abidiahmed.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow specific pages
+Allow: /projects/
+Allow: /cv/
+Allow: /_next/static/
+Allow: /_next/image/
+
+# Disallow private or unnecessary areas
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: *.json$
+Disallow: /*?*
+
+# Allow well-known files
+Allow: /.well-known/
+
+# Sitemap location
+Sitemap: https://abidiahmed.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overloading)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social media bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block malicious bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: / 
