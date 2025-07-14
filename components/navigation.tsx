@@ -91,7 +91,18 @@ const Navigation = () => {
     return (
       <>
         {/* Mobile Navigation */}
-        <div className="fixed top-4 right-4 z-50">
+        <div 
+          className="fixed top-4 right-4 z-[9999]"
+          style={{
+            position: 'fixed',
+            top: '1rem',
+            right: '1rem',
+            zIndex: 9999,
+            isolation: 'isolate',
+            transform: 'translateZ(0)',
+            willChange: 'auto'
+          }}
+        >
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -144,7 +155,15 @@ const Navigation = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm"
+              className="fixed inset-0 z-[9998] bg-black/80 backdrop-blur-sm"
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                zIndex: 9998
+              }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <motion.div
@@ -192,11 +211,25 @@ const Navigation = () => {
 
   // Desktop Navigation
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+    <div 
+      className="fixed top-6 left-0 right-0 z-[9999] flex justify-center px-4"
+      style={{
+        position: 'fixed',
+        top: '1.5rem',
+        left: 0,
+        right: 0,
+        zIndex: 9999,
+        isolation: 'isolate',
+        transform: 'translateZ(0)',
+        willChange: 'auto',
+        pointerEvents: 'none'
+      }}
+    >
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        style={{ pointerEvents: 'auto' }}
       >
         <motion.div
           animate={{

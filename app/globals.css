@@ -22,13 +22,17 @@
     font-family: "Inter", sans-serif;
     background: #020617;
     color: white;
-    overflow-x: hidden;
+    /* Remove overflow-x: hidden that can interfere with fixed positioning */
+    overflow-x: auto;
     /* Performance optimizations */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     /* Reduce layout shifts */
     line-height: 1.5;
+    /* Ensure proper stacking context for fixed elements */
+    position: relative;
+    isolation: isolate;
   }
 
   /* Preload critical fonts */
@@ -74,9 +78,7 @@
   /* GPU-accelerated transitions */
   .transition-optimized {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    /* Remove will-change from global styles - let components handle it individually */
   }
 
   /* Custom animations for better performance */
@@ -102,9 +104,17 @@
     height: auto;
     aspect-ratio: attr(width) / attr(height);
   }
+
+  /* Ensure fixed elements are properly isolated */
+  .nav-fixed {
+    position: fixed !important;
+    isolation: isolate;
+    transform: translateZ(0);
+    will-change: auto;
+  }
 }
 
-/* Apply optimized transitions to all elements */
-* {
+/* Apply optimized transitions to most elements, but not all */
+button, a, div[class*="transition"] {
   @apply transition-optimized;
 }
